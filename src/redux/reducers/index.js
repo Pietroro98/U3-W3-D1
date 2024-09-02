@@ -1,5 +1,6 @@
+
 const initialState = {
-    companies: [],
+    favourites: [],  
   };
   
   const mainReducer = (state = initialState, action) => {
@@ -7,13 +8,13 @@ const initialState = {
       case 'ADD_FAVOURITE':
         return {
           ...state,
-          companies: [...state.companies, action.payload],
+          favourites: [...state.favourites, action.payload],
         };
   
       case 'REMOVE_FAVOURITE':
         return {
           ...state,
-          companies: state.companies.filter(company => company !== action.payload),
+          favourites: state.favourites.filter(company => company !== action.payload),
         };
   
       default:
